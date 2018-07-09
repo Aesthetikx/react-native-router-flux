@@ -74,7 +74,7 @@ _react2.default.createElement(AppNavigator,{navigation:(0,_reactNavigation.addNa
 }}]);return App;}(_react2.default.Component),_class2.propTypes={navigator:_propTypes2.default.func,backAndroidHandler:_propTypes2.default.func,uriPrefix:_propTypes2.default.string,onDeepLink:_propTypes2.default.func},_temp2))||_class;
 
 
-var Router=function Router(_ref6){var createReducer=_ref6.createReducer,sceneStyle=_ref6.sceneStyle,scenes=_ref6.scenes,uriPrefix=_ref6.uriPrefix,navigator=_ref6.navigator,getSceneStyle=_ref6.getSceneStyle,children=_ref6.children,state=_ref6.state,dispatch=_ref6.dispatch,onDeepLink=_ref6.onDeepLink,_ref6$wrapBy=_ref6.wrapBy,wrapBy=_ref6$wrapBy===undefined?function(props){return props;}:_ref6$wrapBy,props=_objectWithoutProperties(_ref6,['createReducer','sceneStyle','scenes','uriPrefix','navigator','getSceneStyle','children','state','dispatch','onDeepLink','wrapBy']);
+var Router=function Router(_ref6){var createReducer=_ref6.createReducer,sceneStyle=_ref6.sceneStyle,scenes=_ref6.scenes,navigator=_ref6.navigator,getSceneStyle=_ref6.getSceneStyle,children=_ref6.children,state=_ref6.state,dispatch=_ref6.dispatch,onDeepLink=_ref6.onDeepLink,_ref6$wrapBy=_ref6.wrapBy,wrapBy=_ref6$wrapBy===undefined?function(props){return props;}:_ref6$wrapBy,props=_objectWithoutProperties(_ref6,['createReducer','sceneStyle','scenes','navigator','getSceneStyle','children','state','dispatch','onDeepLink','wrapBy']);
 var data=_extends({},props);
 if(getSceneStyle){
 data.cardStyle=getSceneStyle(props);
@@ -85,12 +85,14 @@ data.cardStyle=sceneStyle;
 var AppNavigator=scenes||navigator||_navigationStore2.default.create(children,data,wrapBy);
 _navigationStore2.default.reducer=createReducer&&createReducer(props);
 if(dispatch&&state){
+console.log('using AppNavigator',dispatch,state);
 
 _navigationStore2.default.setState(state);
 _navigationStore2.default.dispatch=dispatch;
-return _react2.default.createElement(AppNavigator,{navigation:(0,_reactNavigation.addNavigationHelpers)({dispatch:dispatch,state:state,addListener:_navigationStore2.default.addListener}),uriPrefix:uriPrefix,__source:{fileName:_jsxFileName,lineNumber:91}});
+return _react2.default.createElement(AppNavigator,{navigation:(0,_reactNavigation.addNavigationHelpers)({dispatch:dispatch,state:state,addListener:_navigationStore2.default.addListener}),__source:{fileName:_jsxFileName,lineNumber:92}});
 }
-return _react2.default.createElement(App,_extends({},props,{onDeepLink:onDeepLink,navigator:AppNavigator,uriPrefix:uriPrefix,__source:{fileName:_jsxFileName,lineNumber:93}}));
+console.log('using App');
+return _react2.default.createElement(App,_extends({},props,{onDeepLink:onDeepLink,navigator:AppNavigator,__source:{fileName:_jsxFileName,lineNumber:95}}));
 };
 Router.propTypes={
 createReducer:_propTypes2.default.func,
